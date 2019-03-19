@@ -56,10 +56,14 @@ class BookList extends Component {
                           <tr>
                             <td>{b.title}</td>
                             <td>{b.author}</td>
-                            <td>{b.available.toString()}</td>
-                            <td>    
+                            {b.available ? (
+                              <td className="text-success">{b.available.toString()}</td>
+                              ) : (
+                              <td className="text-danger">{b.available.toString()}</td>
+                            )}
+                            <td>
                               <button
-                                className="btn btn-primary"
+                                className="btn btn-primary btn-sm"
                                 onClick = {(e) => {
                                   e.preventDefault();
                                   changeAvailability({
@@ -69,6 +73,7 @@ class BookList extends Component {
                                 Change Availablity
                               </button>
                             </td>
+                    
                           </tr>
                         )}
                       </Mutation>
