@@ -34,7 +34,7 @@ const RootQuery = new GraphQLObjectType({
         id: { type: GraphQLString }
       },
       resolve(parentValue, args) {
-        return Book.find({ id: args.id });
+        return Book.findOne({ id: args.id });
       }
     }
   }
@@ -71,7 +71,6 @@ const mutation = new GraphQLObjectType({
         author: { type: GraphQLString },
       },
       async resolve(parentValue, args) {
-        console.log(args)
         const payload = {
           available: args.available,
         }

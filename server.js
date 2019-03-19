@@ -5,5 +5,6 @@ const app = require('./app.js');
 
 db.connect()
   .then(() => {
+  	console.log(`Listening on Port: ${PORT}`);
     app.listen(PORT);
   })

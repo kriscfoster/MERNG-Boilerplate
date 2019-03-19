@@ -3,7 +3,6 @@ const expressGraphQL = require('express-graphql');
 const schema = require('./graphql/schema.js');
 const app = express();
 const path = require('path');
-console.log("aaa")
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
